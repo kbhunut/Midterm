@@ -32,8 +32,16 @@ create table Invitations(
    id INT NOT NULL AUTO_INCREMENT,
    user_id INT NOT NULL,
    event_id INT NOT NULL,
-   responseType INT, NOT NULL,
+   responseType_id INT NOT NULL,
    PRIMARY KEY ( id ),
    FOREIGN KEY (user_id) REFERENCES User(id),
-   FOREIGN KEY (event_id) REFERENCES Event(id)
+   FOREIGN KEY (event_id) REFERENCES Event(id),
+   FOREIGN KEY (responseType_id) REFERENCES ResponseType(id)
+);
+
+create table ResponseType(
+   id INT NOT NULL AUTO_INCREMENT,
+   name INT NOT NULL,
+   value INT NOT NULL,
+   PRIMARY KEY ( id )
 );
