@@ -1,0 +1,39 @@
+create table User(
+   id INT NOT NULL AUTO_INCREMENT,
+   firstName VARCHAR(255),
+   lastName VARCHAR(255),
+   email VARCHAR(255),
+   PRIMARY KEY ( id )
+);
+
+create table Event(
+   id INT NOT NULL AUTO_INCREMENT,
+   name VARCHAR(255),
+   startDate DATETIME,
+   endDate DATETIME,
+   note VARCHAR(255),
+   location VARCHAR(255),
+   invitations_id INT NOT NULL,
+   PRIMARY KEY (id),
+   FOREIGN KEY (invitations_id) REFERENCES Invitations(id)
+);
+
+create table Events(
+   id INT NOT NULL AUTO_INCREMENT,
+   user_id INT NOT NULL,
+   event_id INT NOT NULL,
+   PRIMARY KEY ( id ),
+   FOREIGN KEY (user_id) REFERENCES User(id),
+   FOREIGN KEY (event_id) REFERENCES Event(id)
+
+);
+
+create table Invitations(
+   id INT NOT NULL AUTO_INCREMENT,
+   user_id INT NOT NULL,
+   event_id INT NOT NULL,
+   responseType INT, NOT NULL,
+   PRIMARY KEY ( id ),
+   FOREIGN KEY (user_id) REFERENCES User(id),
+   FOREIGN KEY (event_id) REFERENCES Event(id)
+);
