@@ -15,11 +15,12 @@ class User:
 
     def get_firstName(self):
         return self._firstName
+
     def set_firstName(self, firstName):
         self._firstName = firstName
 
     def get_lastName(self):
-        return self._firstName
+        return self._lastName
 
     def set_lastName(self, lastName):
         self._lastName = lastName
