@@ -32,21 +32,21 @@ class UserDAO(DAO):
         print("Find User by ID")
 
 
-class InvitationDAO(DAO):
+class InvitationsDAO(DAO):
     def insert(self, payload):
-        print("Insert Invitation")
+        print("Insert Invitations")
 
     def delete(self, payload):
-        print("Delete Invitation")
+        print("Delete Invitations")
 
     def update(self, payload):
-        print("Update Invitation")
+        print("Update Invitations")
 
     def get_list(self):
-        print("Get list of Invitation")
+        print("Get list of Invitations")
 
     def findByID(self, id):
-        print("Find Invitation by ID")
+        print("Find Invitations by ID")
 
 
 class EventsDAO(DAO):
